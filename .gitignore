@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.pth
+*.pt
+*.h5
+.env
+venv/
+.DS_Store
+shared/dataset/
+outputs/
+*.log
