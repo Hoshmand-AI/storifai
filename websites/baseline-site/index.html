@@ -7,56 +7,91 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--navy-950:#0A1628;--navy-900:#0F2140;--warm-50:#FDFCFA;--warm-100:#F8F6F3;--warm-200:#F0EDE8;--warm-300:#E2DDD5;--warm-400:#B8B0A4;--warm-500:#8A8178;--warm-600:#6B6359;--warm-700:#4A443C;--accent-500:#D97706;--accent-400:#F59E0B;--accent-600:#B45309;--accent-100:#FEF3C7;--success:#3D8B6E;}
-body{font-family:'DM Sans',sans-serif;background:var(--warm-50);color:var(--warm-600);}
-nav{background:var(--navy-900);height:56px;display:flex;align-items:center;padding:0 32px;justify-content:space-between;position:sticky;top:0;z-index:10;}
-.logo{display:flex;align-items:basine;}.logo .w1{font-family:'DM Sans',sans-serif;font-weight:700;color:white;font-size:19px;}.logo .w2{font-family:'DM Serif Display',serif;color:var(--accent-400);font-size:19px;}.logo .tag{font-size:10px;font-weight:600;color:rgba(255,255,255,0.35);letter-spacing:0.08em;text-transform:uppercase;margin-left:8px;border:1px solid rgba(255,255,255,0.15);padding:2px 6px;border-radius:4px;}
-.nav-links{display:flex;gap:24px;margin-left:32px;}.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;padding:18px 0;border-bottom:2px solid transparent;transition:color 150ms;}.nav-links a.active{color:white;border-bottom-color:var(--accent-500);}
-.nav-right{display:flex;align-items:center;gap:16px;}.nav-right a{font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;font-weight:500;}
-.btn-nav{font-size:12px;font-weight:600;padding:6px 16px;border-radius:6px;border:none;cursor:pointer;background:var(--accent-500);color:var(--navy-950);transition:background 150ms;}.btn-nav:hover{background:var(--accent-400);}
+:root{--navy:#0F2140;--warm-50:#FDFCFA;--warm-100:#F8F6F3;--warm-200:#F0EDE8;--warm-300:#E2DDD5;--warm-400:#B8B0A4;--warm-500:#8A8178;--warm-700:#4A443C;--accent:#D97706;--accent-light:#FEF3C7;--accent-dark:#B45309;}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-50);color:var(--warm-500);}
+
+/* NAV */
+nav{background:var(--navy);height:56px;display:flex;align-items:center;padding:0 32px;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.logo{display:flex;align-items:center;gap:8px;}
+.logo-text{font-weight:700;color:#fff;font-size:19px;}
+.logo-text span{font-family:'DM Serif Display',serif;color:#F59E0B;}
+.logo-badge{font-size:10px;font-weight:600;color:rgba(255,255,255,0.35);letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.15);padding:2px 6px;border-radius:4px;}
+.nav-links{display:flex;gap:24px;margin-left:32px;}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;padding:18px 0;border-bottom:2px solid transparent;}
+.nav-links a.active{color:#fff;border-bottom-color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-right a{font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;}
+.btn-nav{font-size:12px;font-weight:600;padding:6px 16px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;}
+
+/* HERO */
 .hero{padding:72px 32px 48px;max-width:640px;margin:0 auto;text-align:center;}
-.hero-label{font-size:11px;font-weight:600;color:var(--accent-600);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
-.hero h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;color:var(--navy-950);line-height:1.15;margin-bottom:14px;}
+.hero-label{font-size:11px;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:40px;color:#0A1628;line-height:1.15;margin-bottom:14px;}
 .hero p{font-size:16px;color:var(--warm-500);line-height:1.6;margin-bottom:28px;}
 .hero-btns{display:flex;gap:10px;justify-content:center;}
-.btn-primary{font-size:13px;font-weight:600;padding:10px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent-500);color:var(--navy-950);transition:background 150ms;}.btn-primary:hover{background:var(--accent-400);}
-.btn-secondary{font-size:13px;font-weight:500;padding:10px 24px;border-radius:6px;border:1px solid var(--warm-300);background:transparent;cursor:pointer;color:var(--navy-950);transition:background 150ms;}.btn-secondary:hover{background:var(--warm-100);}
-.stats-row{display:flex;justify-content:center;gap:56px;padding:32px;border-top:1px solid var(--warm-200);border-bottom:1px solid var(--warm-200);margin:0 32px;}
-.stat .num{font-size:26px;font-weight:700;color:var(--navy-950);text-align:center;font-variant-numeric:tabular-nums;}.stat .lbl{font-size:11px;color:var(--warm-400);text-transform:uppercase;letter-spacing:0.07em;font-weight:500;margin-top:3px;text-align:center;}
+.btn-cta{font-size:13px;font-weight:600;padding:10px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;}
+.btn-outline{font-size:13px;font-weight:500;padding:10px 24px;border-radius:6px;border:1px solid var(--warm-300);background:transparent;cursor:pointer;color:#0A1628;}
+
+/* STATS */
+.stats{display:flex;justify-content:center;gap:56px;padding:32px;border-top:1px solid var(--warm-200);border-bottom:1px solid var(--warm-200);margin:0 32px;}
+.stat .num{font-size:26px;font-weight:700;color:#0A1628;text-align:center;}
+.stat .lbl{font-size:11px;color:var(--warm-400);text-transform:uppercase;letter-spacing:.07em;font-weight:500;text-align:center;margin-top:3px;}
+
+/* SECTION */
 .section{max-width:800px;margin:48px auto;padding:0 32px;}
-.section h2{font-family:'DM Serif Display',serif;font-size:28px;color:var(--navy-950);margin-bottom:6px;}.section .sub{font-size:14px;color:var(--warm-500);margin-bottom:28px;}
-.upload-box{border:1px solid var(--warm-200);border-radius:8px;background:var(--warm-100);padding:40px;text-align:center;cursor:pointer;transition:border-color 200ms,box-shadow 200ms;}.upload-box:hover{border-color:var(--warm-300);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
-.upload-icon{width:48px;height:48px;margin:0 auto 16px;background:var(--accent-100);border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.upload-title{font-size:15px;font-weight:600;color:var(--navy-950);margin-bottom:6px;}.upload-sub{font-size:13px;color:var(--warm-500);}
+.section h2{font-family:'DM Serif Display',serif;font-size:28px;color:#0A1628;margin-bottom:6px;}
+.section .sub{font-size:14px;color:var(--warm-500);margin-bottom:28px;}
+
+/* UPLOAD */
+.upload-box{border:2px dashed var(--warm-300);border-radius:8px;background:var(--warm-100);padding:40px;text-align:center;cursor:pointer;transition:border-color 200ms,background 200ms;}
+.upload-box:hover{border-color:var(--accent);background:var(--accent-light);}
+.upload-title{font-size:15px;font-weight:600;color:#0A1628;margin-bottom:6px;margin-top:12px;}
+.upload-sub{font-size:13px;color:var(--warm-500);}
 .photos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px;}
-.photo-slot{aspect-ratio:1;border-radius:6px;border:1px dashed var(--warm-300);background:var(--warm-100);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--warm-400);font-weight:500;overflow:hidden;}.photo-slot img{width:100%;height:100%;object-fit:cover;}
+.photo-slot{aspect-ratio:1;border-radius:6px;border:1px dashed var(--warm-300);background:var(--warm-100);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--warm-400);overflow:hidden;}
+.photo-slot img{width:100%;height:100%;object-fit:cover;}
 .generate-row{margin-top:16px;display:flex;align-items:center;justify-content:space-between;}
-.photo-count{font-size:13px;color:var(--warm-500);}
-.btn-generate{font-size:13px;font-weight:600;padding:9px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent-500);color:var(--navy-950);transition:background 150ms;}.btn-generate:hover:not(:disabled){background:var(--accent-400);}.btn-generate:disabled{opacity:0.4;cursor:not-allowed;}
+.btn-generate{font-size:13px;font-weight:600;padding:9px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;}
+.btn-generate:disabled{opacity:0.4;cursor:not-allowed;}
+
+/* OUTPUT */
 .output-card{border:1px solid var(--warm-200);border-radius:8px;background:var(--warm-100);padding:24px;margin-top:24px;display:none;}
-.output-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}.output-header h3{font-size:15px;font-weight:600;color:var(--navy-950);}
-.badge{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:2px 7px 2px 9px;border-left:3px solid var(--accent-500);background:var(--accent-100);color:var(--accent-600);}
-.story-text{font-size:14px;color:var(--warm-700);line-height:1.7;}.story-text p{margin-bottom:10px;}.story-text p:last-child{margin-bottom:0;}
+.output-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.output-header h3{font-size:15px;font-weight:600;color:#0A1628;}
+.badge{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px 2px 9px;border-left:3px solid var(--accent);background:var(--accent-light);color:var(--accent-dark);}
+.story-text p{font-size:14px;color:var(--warm-700);line-height:1.7;margin-bottom:10px;}
 .output-footer{margin-top:16px;padding-top:12px;border-top:1px solid var(--warm-200);display:flex;align-items:center;justify-content:space-between;}
-.model-info{font-size:11px;color:var(--warm-400);text-transform:uppercase;letter-spacing:0.07em;font-weight:500;}
-.copy-btn{font-size:12px;font-weight:500;color:var(--warm-500);background:none;border:none;cursor:pointer;transition:color 150ms;}.copy-btn:hover{color:var(--navy-950);}
+.model-info{font-size:11px;color:var(--warm-400);text-transform:uppercase;letter-spacing:.07em;}
+.copy-btn{font-size:12px;color:var(--warm-500);background:none;border:none;cursor:pointer;}
+
+/* STEPS */
 .steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.step-card{background:var(--warm-100);border:1px solid var(--warm-200);border-radius:8px;padding:18px;transition:border-color 200ms,box-shadow 200ms;}.step-card:hover{border-color:var(--warm-300);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
-.step-num{font-size:11px;font-weight:700;color:var(--accent-600);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}.step-title{font-size:14px;font-weight:600;color:var(--navy-950);margin-bottom:4px;}.step-desc{font-size:13px;color:var(--warm-500);line-height:1.5;}
-footer{background:var(--navy-900);padding:28px 32px 18px;margin-top:64px;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;max-width:736px;margin:0 auto;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.07);}
-.footer-brand .fl{display:flex;align-items:baseline;margin-bottom:6px;}.footer-brand .fl .fw{font-family:'DM Sans',sans-serif;font-weight:700;color:white;font-size:17px;}.footer-brand .fl .fi{font-family:'DM Serif Display',serif;color:var(--accent-400);font-size:17px;}
-.footer-brand p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.5;}.footer-brand a{color:rgba(255,255,255,0.45);text-decoration:none;}
-.footer-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;}.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:6px;}
-.footer-bottom{max-width:736px;margin:14px auto 0;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.2);}
+.step-card{background:var(--warm-100);border:1px solid var(--warm-200);border-radius:8px;padding:18px;}
+.step-num{font-size:11px;font-weight:700;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.step-title{font-size:14px;font-weight:600;color:#0A1628;margin-bottom:4px;}
+.step-desc{font-size:13px;color:var(--warm-500);line-height:1.5;}
+
+/* FOOTER */
+footer{background:var(--navy);padding:28px 32px 18px;margin-top:64px;}
+.footer-inner{max-width:736px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.footer-brand p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.5;margin-top:6px;}
+.footer-brand a{color:rgba(255,255,255,0.45);text-decoration:none;}
+.footer-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:6px;}
+.footer-bottom{margin-top:14px;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.2);}
+
 input[type=file]{display:none;}
-@media(max-width:600px){.steps-grid,.footer-grid{grid-template-columns:1fr;}.stats-row{gap:24px;flex-wrap:wrap;}.photos-grid{grid-template-columns:repeat(3,1fr);}.nav-links{display:none;}}
 </style>
 </head>
 <body>
+
 <nav>
   <div style="display:flex;align-items:center;">
-    <div class="logo"><span class="w1">Stori</span><span class="w2">fai</span><span class="tag">Baseline</span></div>
+    <div class="logo">
+      <span class="logo-text">Stori<span>fai</span></span>
+      <span class="logo-badge">Baseline</span>
+    </div>
     <div class="nav-links">
       <a href="#" class="active">Home</a>
       <a href="#how">How It Works</a>
@@ -74,12 +109,12 @@ input[type=file]{display:none;}
   <h1>Turn your photos into a story worth sharing.</h1>
   <p>Upload up to 5 photos and Storifai generates a narrative story you can share on social media, your blog, or with family.</p>
   <div class="hero-btns">
-    <button class="btn-primary" onclick="document.getElementById('upload-section').scrollIntoView({behavior:'smooth'})">Generate a Story</button>
-    <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How It Works</button>
+    <button class="btn-cta" onclick="document.getElementById('upload-section').scrollIntoView({behavior:'smooth'})">Generate a Story</button>
+    <button class="btn-outline" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How It Works</button>
   </div>
 </div>
 
-<div class="stats-row">
+<div class="stats">
   <div class="stat"><div class="num">40k+</div><div class="lbl">Stories Trained On</div></div>
   <div class="stat"><div class="num">5</div><div class="lbl">Photos Max</div></div>
   <div class="stat"><div class="num">ResNet-50</div><div class="lbl">Vision Model</div></div>
@@ -89,15 +124,13 @@ input[type=file]{display:none;}
 <div class="section" id="upload-section">
   <h2>Generate your story</h2>
   <p class="sub">Upload 3–5 photos from your trip, event, or everyday moment.</p>
-  <input type="file" id="file-input" multiple accept="image/*" onchange="handleFiles(this.files)">
+  <input type="file" id="file-input" multiple accept="image/*">
   <div class="upload-box" onclick="document.getElementById('file-input').click()">
-    <div class="upload-icon">
-      <svg width="24" height="24" fill="none" stroke="#B45309" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
-    </div>
-    <div class="upload-title">Drop phot here or click to browse</div>
+    <svg width="32" height="32" fill="none" stroke="#B45309" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+    <div class="upload-title">Drop photos here or click to browse</div>
     <div class="upload-sub">JPG, PNG — up to 5 photos, 10MB each</div>
   </div>
-  <div class="photos-grid" id="photos-grid">
+  <div class="photos-grid">
     <div class="photo-slot" id="slot-0">Photo 1</div>
     <div class="photo-slot" id="slot-1">Photo 2</div>
     <div class="photo-slot" id="slot-2">Photo 3</div>
@@ -105,7 +138,7 @@ input[type=file]{display:none;}
     <div class="photo-slot" id="slot-4">Photo 5</div>
   </div>
   <div class="generate-row">
-    <span class="photo-count" id="photo-count">0 of 5 photos uploaded</span>
+    <span id="photo-count" style="font-size:13px;color:var(--warm-500);">0 of 5 photos uploaded</span>
     <button class="btn-generate" id="gen-btn" onclick="generateStory()" disabled>Generate Story →</button>
   </div>
   <div class="output-card" id="output-card">
@@ -116,7 +149,7 @@ input[type=file]{display:none;}
     <div class="story-text" id="story-output"></div>
     <div class="output-footer">
       <span class="model-info">ResNet-50 + LSTM · CS 747 Deep Learning · GMU</span>
-      <button class="copy-btlick="copyStory()">Copy story</button>
+      <button class="copy-btn" onclick="copyStory()">Copy story</button>
     </div>
   </div>
 </div>
@@ -128,7 +161,7 @@ input[type=file]{display:none;}
     <div class="step-card"><div class="step-num">Step 01</div><div class="step-title">Upload your photos</div><div class="step-desc">Select 3–5 photos from any event — travel, family, everyday moments.</div></div>
     <div class="step-card"><div class="step-num">Step 02</div><div class="step-title">Vision encoding</div><div class="step-desc">ResNet-50 extracts visual features from each photo — objects, scenes, colors, textures.</div></div>
     <div class="step-card"><div class="step-num">Step 03</div><div class="step-title">Story generation</div><div class="step-desc">An LSTM decoder reads the image features and generates a sentence-by-sentence story.</div></div>
-    <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Copy are</div><div class="step-desc">Copy your story and post it to Instagram, a travel blog, or share with family.</div></div>
+    <div class="step-card"><div class="step-num">Step 04</div><div class="step-title">Copy and share</div><div class="step-desc">Copy your story and post it to Instagram, a travel blog, or share with family.</div></div>
   </div>
 </div>
 
@@ -136,72 +169,73 @@ input[type=file]{display:none;}
   <h2>About this model</h2>
   <p class="sub">Built as the baseline model for the Storifai deep learning research project.</p>
   <div class="step-card" style="padding:20px 24px;">
-    <div class="step-desc" style="font-size:14px;line-height:1.7;">This is the <strong style="color:var(--navy-950);font-weight:600;">baseline version</strong> of Storifai, built using a ResNet-50 image encoder and LSTM decoder trained on the VIST dataset (40,155 human-written photo stories). The improved version uses CLIP encoding and cross-image attention for richer, more coherent narratives.</div>
+    <div style="font-size:14px;color:var(--warm-700);line-height:1.7;">This is the <strong style="color:#0A1628;">baseline version</strong> of Storifai, built using a ResNet-50 image encoder and LSTM decoder trained on the VIST dataset (40,155 human-written photo stories). The improved version uses CLIP encoding and cross-image attention for richer, more coherent narratives.</div>
   </div>
 </div>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="fl"><span class="fw">Stori</span><span class="fi">fai</span></div>
-      <p>AI-powered visual story generation from photos.<br>Built for CS 747 Deep Learning at George Mason University.</p>
-      <p style="margin-top:8px;">Built by <a href="https://hoshmand.ai">Hoshmand AI</a></p>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Stori<span style="font-family:'DM Serif Display',serif;color:#F59E0B;">fai</span></span>
+        <p>AI-powered visual story generation from photos.<br>Built for CS 747 Deep Learning at George Mason University.<br>Built by <a href="https://hoshmand.ai">Hoshmand AI</a></p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><a href="#">Generate Story</a><a href="#how">How It Works</a><a href="#about">About</a></div>
+      <div class="footer-col"><h4>Hoshmand AI</h4><a href="https://hoshmand.ai">hoshmand.ai</a><a href="#">PathFinder</a><a href="#">Planora</a></div>
     </div>
-    <div class="footer-col"><h4>Product</h4><a href="#">Generate Story</a><a href="#how">How It Works</a><a href="#about">About</a></div>
-    <div class="footer-col"><h4>Hoshmand AI</h4><a href="https://hoshmand.ai">hoshmand.ai</a><a href="https://pathfinder.hoshmand.ai">PathFinder</a><a href="https://planora.hoshmand.ai">Planora</a></div>
+    <div class="footer-bottom"><span>© 2026 Hoshmand AI. All rights reserved.</span><span>Built by Hoshmand AI</span></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Hoshmand AI. All rights reserved.</span><span>Built by Hoshmand AI</span></div>
 </footer>
 
 <script>
-let uploadedFiles=[];
-const BACKEND_URL='http://localhost:8000';
-function handleFiles(files){
-  const newFiles=Array.from(files).slice(0,5-uploadedFiles.length);
-  uploadedFiles=[...uploadedFiles,...newFiles].slice(0,5);
-  updateSlots();
-}
-function updateSlots(){
-  for(let i=0;i<5;i++){
-    const slot=document.getElementById('slot-'+i);
-    if(i<uploadedFiles.length){
-      const url=URL.createObectURL(uploadedFiles[i]);
-      slot.innerHTML='<img src="'+url+'" alt="Photo '+(i+1)+'">';
-    }else{slot.innerHTML='Photo '+(i+1);}
+var files = [];
+
+document.getElementById('file-input').addEventListener('change', function() {
+  files = Array.from(this.files).slice(0, 5);
+  for (var i = 0; i < 5; i++) {
+    var slot = document.getElementById('slot-' + i);
+    if (i < files.length) {
+      slot.innerHTML = '<img src="' + URL.createObjectURL(files[i]) + '">';
+    } else {
+      slot.innerHTML = 'Photo ' + (i + 1);
+    }
   }
-  document.getElementById('photo-count').textContent=uploadedFiles.length+' of 5 photos uploaded';
-  document.getElementById('gen-btn').disabled=uploadedFiles.length<3;
-}
-async function generateStory(){
-  const btn=document.getElementById('gen-btn');
-  btn.textContent='Generating...';btn.disabled=true;
-  try{
-    const formData=new FormData();
-    uploadedFiles.forEach(f=>formData.append('images',f));
-    const response=await fetch(BACKEND_URL+'/generate',{method:'POST',body:formData});
-    if(!response.ok)throw new Error('API error');
-    const data=await response.json();
-    showStory(data.story);
-  }catch(err){
-    const demos=[
-      ["We arrived at the beach just as the sun was beginning to rise.","The waves were calm and the sky turned shades of pink and gold.","We spent the morning exploring tide pools and watching pelicans glide overhead.","By afternoon we had found a quiet cove all to ourselves.","As the day ended we sat in the sand and watched the last light fade into the ocean."],
-      ["The morning started early with coffee and a map spread across the table.","We drove through winding mountain roads as clouds moved below us.","At the summit we found a small café where locals gathered every Sunday.","The descent took us through a village that seemed untouched by time.","We made it back as the streetlights came on, tired and completely happy."]
+  document.getElementById('photo-count').textContent = files.length + ' of 5 photos uploaded';
+  document.getElementById('gen-btn').disabled = files.length < 3;
+});
+
+async function generateStory() {
+  var btn = document.getElementById('gen-btn');
+  btn.textContent = 'Generating...';
+  btn.disabled = true;
+  try {
+    var fd = new FormData();
+    files.forEach(function(f) { fd.append('images', f); });
+    var r = await fetch('http://localhost:8000/generate', {method:'POST', body:fd});
+    var d = await r.json();
+    showStory(d.story);
+  } catch(e) {
+    var demos = [
+      ["We arrived just as the light was perfect.","Everyone was full of energy and smiles.","We explored every corner together.","By afternoon we found our favorite spot.","It was a day we will never forget."],
+      ["The morning started quietly.","We wandered without a plan.","Strangers became friends.","The afternoon light made everything golden.","We left feeling grateful."]
     ];
-    showStory(demos[Math.floor(Math.random()*demos.length)].slice(0,uploadedFiles.length));
+    showStory(demos[Math.floor(Math.random()*2)].slice(0, files.length));
   }
-  btn.textContent='Generate Story →';btn.disabled=false;
+  btn.textContent = 'Generate Story →';
+  btn.disabled = false;
 }
-function showStory(sentences){
-  document.getElementById('story-output').innerHTML=sentences.map(s=>'<p>'+s+'</p>').join('');
-  const card=document.getElementById('output-card');
-  card.style.display='block';
+
+function showStory(sentences) {
+  document.getElementById('story-output').innerHTML = sentences.map(function(s) { return '<p>' + s + '</p>'; }).join('');
+  var card = document.getElementById('output-card');
+  card.style.display = 'block';
   card.scrollIntoView({behavior:'smooth'});
 }
-function copyStory(){
-  navigator.clipboard.writeText(document.getElementById('story-output').innerText).the)=>{
-    const btn=event.target;btn.textContent='Copied!';
-    setTimeout(()=>btn.textContent='Copy story',2000);
-  });
+
+function copyStory() {
+  navigator.clipboard.writeText(document.getElementById('story-output').innerText);
+  event.target.textContent = 'Copied!';
+  setTimeout(function(){ event.target.textContent = 'Copy story'; }, 2000);
 }
 </script>
 </body>
