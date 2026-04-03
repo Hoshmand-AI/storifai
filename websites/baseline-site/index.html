@@ -23,17 +23,26 @@ nav{background:var(--navy);height:56px;display:flex;align-items:center;padding:0
 .nav-right a{font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;}
 .btn-nav{font-size:12px;font-weight:600;padding:6px 16px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;}
 
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.7);border-radius:2px;}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:var(--navy);z-index:9;padding:16px 24px;border-top:1px solid rgba(255,255,255,0.08);}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu .btn-nav-mobile{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;padding:10px 24px;border-radius:6px;background:var(--accent);color:#0A1628;text-decoration:none;width:100%;text-align:center;}
+
 /* HERO */
 .hero{padding:72px 32px 48px;max-width:640px;margin:0 auto;text-align:center;}
 .hero-label{font-size:11px;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
 .hero h1{font-family:'DM Serif Display',serif;font-size:40px;color:#0A1628;line-height:1.15;margin-bottom:14px;}
 .hero p{font-size:16px;color:var(--warm-500);line-height:1.6;margin-bottom:28px;}
-.hero-btns{display:flex;gap:10px;justify-content:center;}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 .btn-cta{font-size:13px;font-weight:600;padding:10px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;}
 .btn-outline{font-size:13px;font-weight:500;padding:10px 24px;border-radius:6px;border:1px solid var(--warm-300);background:transparent;cursor:pointer;color:#0A1628;}
 
 /* STATS */
-.stats{display:flex;justify-content:center;gap:56px;padding:32px;border-top:1px solid var(--warm-200);border-bottom:1px solid var(--warm-200);margin:0 32px;}
+.stats{display:flex;justify-content:center;gap:40px;padding:32px;border-top:1px solid var(--warm-200);border-bottom:1px solid var(--warm-200);margin:0 32px;flex-wrap:wrap;}
 .stat .num{font-size:26px;font-weight:700;color:#0A1628;text-align:center;}
 .stat .lbl{font-size:11px;color:var(--warm-400);text-transform:uppercase;letter-spacing:.07em;font-weight:500;text-align:center;margin-top:3px;}
 
@@ -50,8 +59,8 @@ nav{background:var(--navy);height:56px;display:flex;align-items:center;padding:0
 .photos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px;}
 .photo-slot{aspect-ratio:1;border-radius:6px;border:1px dashed var(--warm-300);background:var(--warm-100);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--warm-400);overflow:hidden;}
 .photo-slot img{width:100%;height:100%;object-fit:cover;}
-.generate-row{margin-top:16px;display:flex;align-items:center;justify-content:space-between;}
-.btn-generate{font-size:13px;font-weight:600;padding:9px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;}
+.generate-row{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.btn-generate{font-size:13px;font-weight:600;padding:9px 24px;border-radius:6px;border:none;cursor:pointer;background:var(--accent);color:#0A1628;white-space:nowrap;}
 .btn-generate:disabled{opacity:0.4;cursor:not-allowed;}
 
 /* OUTPUT */
@@ -60,7 +69,7 @@ nav{background:var(--navy);height:56px;display:flex;align-items:center;padding:0
 .output-header h3{font-size:15px;font-weight:600;color:#0A1628;}
 .badge{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px 2px 9px;border-left:3px solid var(--accent);background:var(--accent-light);color:var(--accent-dark);}
 .story-text p{font-size:14px;color:var(--warm-700);line-height:1.7;margin-bottom:10px;}
-.output-footer{margin-top:16px;padding-top:12px;border-top:1px solid var(--warm-200);display:flex;align-items:center;justify-content:space-between;}
+.output-footer{margin-top:16px;padding-top:12px;border-top:1px solid var(--warm-200);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 .model-info{font-size:11px;color:var(--warm-400);text-transform:uppercase;letter-spacing:.07em;}
 .copy-btn{font-size:12px;color:var(--warm-500);background:none;border:none;cursor:pointer;}
 
@@ -79,9 +88,50 @@ footer{background:var(--navy);padding:28px 32px 18px;margin-top:64px;}
 .footer-brand a{color:rgba(255,255,255,0.45);text-decoration:none;}
 .footer-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
 .footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:6px;}
-.footer-bottom{margin-top:14px;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.2);}
+.footer-bottom{margin-top:14px;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.2);flex-wrap:wrap;gap:8px;}
 
 input[type=file]{display:none;}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .nav-right{display:none;}
+  .hamburger{display:flex;}
+
+  .hero{padding:40px 20px 32px;}
+  .hero h1{font-size:28px;}
+  .hero p{font-size:14px;}
+  .hero-btns{flex-direction:column;align-items:stretch;gap:10px;}
+  .btn-cta,.btn-outline{width:100%;padding:12px 20px;font-size:14px;text-align:center;}
+
+  .stats{margin:0 16px;padding:20px 16px;gap:0;display:grid;grid-template-columns:1fr 1fr;row-gap:20px;}
+  .stat .num{font-size:22px;}
+  .stat .lbl{font-size:10px;}
+
+  .section{padding:0 16px;margin:32px auto;}
+  .section h2{font-size:22px;}
+
+  .upload-box{padding:24px 16px;}
+  .photos-grid{grid-template-columns:repeat(3,1fr);gap:6px;}
+  .generate-row{flex-direction:column;align-items:stretch;}
+  .generate-row span{text-align:center;}
+  .btn-generate{width:100%;padding:12px;font-size:14px;}
+
+  .steps-grid{grid-template-columns:1fr;}
+
+  .output-card{padding:16px;}
+  .output-footer{flex-direction:column;align-items:flex-start;}
+
+  footer{padding:24px 16px 16px;}
+  .footer-top{grid-template-columns:1fr;gap:20px;}
+  .footer-bottom{flex-direction:column;gap:4px;}
+}
+
+@media(max-width:400px){
+  .hero h1{font-size:24px;}
+  .stat .num{font-size:18px;}
+}
 </style>
 </head>
 <body>
@@ -102,7 +152,18 @@ input[type=file]{display:none;}
     <a href="#">Sign In</a>
     <button class="btn-nav">Try Free</button>
   </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="closeMenu()">Home</a>
+  <a href="#how" onclick="closeMenu()">How It Works</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#" onclick="closeMenu()">Sign In</a>
+  <a class="btn-nav-mobile" href="#upload-section" onclick="closeMenu()">Try Free</a>
+</div>
 
 <div class="hero">
   <div class="hero-label">AI-Powered Visual Storytelling</div>
@@ -190,6 +251,14 @@ input[type=file]{display:none;}
 <script>
 var files = [];
 
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
 document.getElementById('file-input').addEventListener('change', function() {
   files = Array.from(this.files).slice(0, 5);
   for (var i = 0; i < 5; i++) {
@@ -211,7 +280,7 @@ async function generateStory() {
   try {
     var fd = new FormData();
     files.forEach(function(f) { fd.append('images', f); });
-    var r = await fetch('http://localhost:8000/generate', {method:'POST', body:fd});
+    var r = await fetch('https://storifai-baseline-1078109938306.us-central1.run.app/generate', {method:'POST', body:fd});
     var d = await r.json();
     showStory(d.story);
   } catch(e) {
